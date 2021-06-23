@@ -1,0 +1,38 @@
+@import './vars';
+@import 'macro-css';
+@import './libs/normalize';
+
+@import './components/all';
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e5e5e5;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 21px;
+  color: $black;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+.page {
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}

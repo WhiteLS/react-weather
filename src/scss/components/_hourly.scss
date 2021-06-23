@@ -1,0 +1,14 @@
+.card--hourly {
+  height: 100%;
+
+  border-radius: 0 0 $border-radius $border-radius;
+
+  .card__main__weather__mini {
+    overflow: hidden;
+
+    svg {
+      width: 90px;
+      height: 90px;
+    }
+  }
+}

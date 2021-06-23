@@ -1,0 +1,118 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 250px;
+
+  background-color: $primary;
+  border-radius: $border-radius;
+
+  padding: 25px 30px;
+
+  box-shadow: -2px 6px 8px 0 rgba($black, 0.25);
+
+  &__text {
+    display: flex;
+    justify-content: space-between;
+
+    // margin-bottom: 20px;
+
+    &__box {
+      font-size: 18px;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+
+    // margin-bottom: 30px;
+
+    svg {
+      width: 88px;
+      height: 88px;
+      margin-right: 10px;
+    }
+
+    &__box {
+      &__temp {
+        font-size: 18px;
+
+        &--now {
+          font-size: 24px;
+        }
+      }
+
+      &__cloudiness {
+        font-size: 21px;
+      }
+    }
+
+    &__weather {
+      width: 100%;
+
+      &__mini {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .tod {
+            font-size: 16px;
+          }
+
+          .temp {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  &__footer {
+    &__weather {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      font-size: 16px;
+
+      &__item {
+        display: flex;
+        align-items: center;
+
+        height: 18px;
+
+        svg {
+          height: 100%;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  &--tomorrow {
+    margin-left: 30px;
+    .card__main {
+      margin-bottom: 5px;
+
+      svg {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+
+  &--radius {
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+}

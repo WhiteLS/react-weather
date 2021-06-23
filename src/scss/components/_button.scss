@@ -1,0 +1,29 @@
+.button {
+  background-color: $primary;
+  border-radius: $border-radius;
+
+  border: none;
+  outline: none;
+
+  padding: 5px 20px;
+
+  cursor: pointer;
+}
+
+.button--radius {
+  border-radius: $border-radius $border-radius 0 0;
+}
+
+.button--desc {
+  width: 25%;
+  text-align: center;
+}
+
+.button--hourly {
+  width: 100%;
+
+  &:last-child {
+    background-color: $secondary;
+    box-shadow: inset 0 0 5px 0 rgba($black, 0.25);
+  }
+}

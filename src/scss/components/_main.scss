@@ -1,0 +1,60 @@
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+
+  padding: 20px 15px;
+
+  .main__card {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+  }
+
+  .main__hourly {
+    margin-bottom: 30px;
+
+    &__buttons {
+      display: flex;
+    }
+  }
+
+  .main__table {
+    table {
+      text-align: center;
+      tr {
+        td {
+          width: 16%;
+        }
+
+        .table__cell__temp {
+          width: 30%;
+
+          text-align: left;
+          font-size: 28px;
+        }
+
+        .table__cell__svg {
+          width: 50px;
+          height: 50px;
+
+          text-align: left;
+
+          svg {
+            width: 50px;
+            height: 50px;
+          }
+        }
+
+        .table__cell_explanation {
+          font-size: 12px;
+        }
+
+        .table__cell__cloudy {
+          text-align: left;
+        }
+      }
+    }
+  }
+}

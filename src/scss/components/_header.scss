@@ -1,0 +1,32 @@
+.header {
+  background-color: $white;
+
+  margin-bottom: 20px;
+  padding: 15px;
+
+  .nav {
+    ul {
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        display: flex;
+        align-items: center;
+
+        font-family: inherit;
+        line-height: normal;
+
+        label {
+          width: 18px;
+          font-size: 18px;
+          margin-right: 10px;
+        }
+
+        input {
+          border: none;
+          border-bottom: 1px solid $black;
+        }
+      }
+    }
+  }
+}
