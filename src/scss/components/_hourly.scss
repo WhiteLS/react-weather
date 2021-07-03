@@ -1,6 +1,8 @@
 .card--hourly {
   height: 100%;
 
+  position: relative;
+
   border-radius: 0 0 $border-radius $border-radius;
 
   .card__main__weather__mini {

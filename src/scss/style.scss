@@ -1,6 +1,8 @@
 @import './vars';
 @import 'macro-css';
 @import './libs/normalize';
+@import 'swiper/swiper';
+@import 'swiper/components/navigation/navigation';
 
 @import './components/all';
 
@@ -9,6 +11,17 @@
   outline: none;
   margin: 0;
   padding: 0;
+}
+
+:root {
+  --swiper-navigation-size: 35px;
+}
+
+.swiper-button-prev {
+  left: 5px;
+}
+.swiper-button-next {
+  right: 5px;
 }
 
 body {

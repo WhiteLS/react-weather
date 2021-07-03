@@ -6,7 +6,7 @@ function Header() {
           <nav className="nav">
             <ul>
               <li>
-                <label for="city-select">
+                <label htmlFor="city-select">
                   <svg
                     aria-hidden="true"
                     focusable="false"

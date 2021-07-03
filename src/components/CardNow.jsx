@@ -1,6 +1,32 @@
 import React from 'react';
 
-function CardNow() {
+function CardNow({ current }) {
+  // console.log(current);
+  const date = new Date(current.dt * 1000);
+  const weekday = [
+    'Воскресенье',
+    'Понедельник',
+    'Вторник',
+    'Среда',
+    'Четверг',
+    'Пятница',
+    'Суббота',
+  ];
+  const month = [
+    'Января',
+    'Февраля',
+    'Марта',
+    'Апреля',
+    'Мая',
+    'Июня',
+    'Июля',
+    'Августа',
+    'Сентября',
+    'Октября',
+    'Ноября',
+    'Декабря',
+  ];
+
   return (
     <div className="card card--today">
       <div className="card__text">
@@ -8,10 +34,14 @@ function CardNow() {
           <p>
             Погода в <span className="city">Димитровграде</span>
           </p>
-          <p>Сейчас 12:20.</p>
+          <p>
+            Сейчас {date.getHours()}:{(date.getMinutes() < 10 ? '0' : '') + date.getMinutes()},{' '}
+            {weekday[date.getDay()]}
+          </p>
         </div>
         <h3>
-          <span className="day">15</span> <span className="month">июня</span>
+          <span className="day">{date.getDate()}</span>{' '}
+          <span className="month">{month[date.getMonth()]}</span>
         </h3>
       </div>
       <div className="card__main">
@@ -19,11 +49,11 @@ function CardNow() {
           <defs>
             <radialGradient id="a" cx="82.715%" cy="14.258%" fx="82.715%" fy="14.258%">
               <stop offset="0%" stopColor="#777AB4" />
-              <stop offset="100%" stopColor="#777AB4" stop-opacity="0" />
+              <stop offset="100%" stopColor="#777AB4" stopOpacity="0" />
             </radialGradient>
             <radialGradient id="b" cx="8.171%" cy="-6.535%" r="63.588%" fx="8.171%" fy="-6.535%">
               <stop offset="0%" stopColor="#777AB4" />
-              <stop offset="100%" stopColor="#777AB4" stop-opacity="0" />
+              <stop offset="100%" stopColor="#777AB4" stopOpacity="0" />
             </radialGradient>
           </defs>
           <g fill="none">
@@ -34,13 +64,13 @@ function CardNow() {
             />
             <path
               fill="#000"
-              fill-opacity=".02"
+              fillOpacity=".02"
               d="M6 19.5c-2.209 0-4-1.791-4-4s1.791-4 4-4c.417 0 .818.064 1.196.182.563-1.842 2.277-3.182 4.304-3.182 2.485 0 4.5 2.015 4.5 4.5 0 .235-.018.465-.053.69.328-.123.682-.19 1.053-.19 1.657 0 3 1.343 3 3s-1.343 3-3 3h-11zM6 19.75c-2.209 0-4-1.791-4-4s1.791-4 4-4c.417 0 .818.064 1.196.182.563-1.842 2.277-3.182 4.304-3.182 2.485 0 4.5 2.015 4.5 4.5 0 .235-.018.465-.053.69.328-.123.682-.19 1.053-.19 1.657 0 3 1.343 3 3s-1.343 3-3 3h-11zM6 20c-2.209 0-4-1.791-4-4s1.791-4 4-4c.417 0 .818.064 1.196.182.563-1.842 2.277-3.182 4.304-3.182 2.485 0 4.5 2.015 4.5 4.5 0 .235-.018.465-.053.69.328-.123.682-.19 1.053-.19 1.657 0 3 1.343 3 3s-1.343 3-3 3h-11z"
             />
             <path
               fill="#000"
-              fill-opacity=".02"
-              fill-rule="nonzero"
+              fillOpacity=".02"
+              fillRule="nonzero"
               d="M16.25 12.5c0-2.623-2.127-4.75-4.75-4.75-2.02 0-3.792 1.272-4.465 3.127-.335-.084-.682-.127-1.035-.127-2.347 0-4.25 1.903-4.25 4.25s1.903 4.25 4.25 4.25h11c1.795 0 3.25-1.455 3.25-3.25s-1.455-3.25-3.25-3.25c-.259 0-.515.03-.762.09l.012-.34z"
             />
             <path
@@ -54,10 +84,14 @@ function CardNow() {
         </svg>
         <div className="card__main__box">
           <p className="card__main__box__temp">
-            <span className="card__main__box__temp--now">+25&deg;</span>, ощущается как
-            <span className="card__main__box__temp--likes"> +28&deg;</span>
+            <span className="card__main__box__temp--now">+{Math.round(current.temp)}&deg;</span>,
+            ощущается как
+            <span className="card__main__box__temp--likes">
+              {' '}
+              +{Math.round(current.feels_like)}&deg;
+            </span>
           </p>
-          <p className="card__main__box__cloudiness">Облачно с прояснениями</p>
+          <p className="card__main__box__cloudiness">{current.weather[0].description}</p>
         </div>
       </div>
       <div className="card__footer">
@@ -76,7 +110,7 @@ function CardNow() {
                 fill="currentColor"
                 d="M156.7 256H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h142.2c15.9 0 30.8 10.9 33.4 26.6 3.3 20-12.1 37.4-31.6 37.4-14.1 0-26.1-9.2-30.4-21.9-2.1-6.3-8.6-10.1-15.2-10.1H81.6c-9.8 0-17.7 8.8-15.9 18.4 8.6 44.1 47.6 77.6 94.2 77.6 57.1 0 102.7-50.1 95.2-108.6C249 291 205.4 256 156.7 256zM16 224h336c59.7 0 106.8-54.8 93.8-116.7-7.6-36.2-36.9-65.5-73.1-73.1-55.4-11.6-105.1 24.9-114.9 75.5-1.9 9.6 6.1 18.3 15.8 18.3h32.8c6.7 0 13.1-3.8 15.2-10.1C325.9 105.2 337.9 96 352 96c19.4 0 34.9 17.4 31.6 37.4-2.6 15.7-17.4 26.6-33.4 26.6H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16zm384 32H243.7c19.3 16.6 33.2 38.8 39.8 64H400c26.5 0 48 21.5 48 48s-21.5 48-48 48c-17.9 0-33.3-9.9-41.6-24.4-2.9-5-8.7-7.6-14.5-7.6h-33.8c-10.9 0-19 10.8-15.3 21.1 17.8 50.6 70.5 84.8 129.4 72.3 41.2-8.7 75.1-41.6 84.7-82.7C526 321.5 470.5 256 400 256z"></path>
             </svg>
-            2.0 м/с
+            {current.wind_speed} м/с
           </li>
           <li className="card__footer__weather__item humidity">
             <svg
@@ -92,23 +126,7 @@ function CardNow() {
                 fill="currentColor"
                 d="M205.22 22.09c-7.94-28.78-49.44-30.12-58.44 0C100.01 179.85 0 222.72 0 333.91 0 432.35 78.72 512 176 512s176-79.65 176-178.09c0-111.75-99.79-153.34-146.78-311.82zM176 448c-61.75 0-112-50.25-112-112 0-8.84 7.16-16 16-16s16 7.16 16 16c0 44.11 35.89 80 80 80 8.84 0 16 7.16 16 16s-7.16 16-16 16z"></path>
             </svg>
-            81%
-          </li>
-          <li className="card__footer__weather__item pop">
-            <svg
-              aria-hidden="true"
-              focusable="false"
-              data-prefix="fas"
-              data-icon="cloud-rain"
-              className="svg-inline--fa fa-cloud-rain fa-w-16"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 512 512">
-              <path
-                fill="currentColor"
-                d="M416 128c-.6 0-1.1.2-1.6.2 1.1-5.2 1.6-10.6 1.6-16.2 0-44.2-35.8-80-80-80-24.6 0-46.3 11.3-61 28.8C256.4 24.8 219.3 0 176 0 114.1 0 64 50.1 64 112c0 7.3.8 14.3 2.1 21.2C27.8 145.8 0 181.5 0 224c0 53 43 96 96 96h320c53 0 96-43 96-96s-43-96-96-96zM88 374.2c-12.8 44.4-40 56.4-40 87.7 0 27.7 21.5 50.1 48 50.1s48-22.4 48-50.1c0-31.4-27.2-43.1-40-87.7-2.2-8.1-13.5-8.5-16 0zm160 0c-12.8 44.4-40 56.4-40 87.7 0 27.7 21.5 50.1 48 50.1s48-22.4 48-50.1c0-31.4-27.2-43.1-40-87.7-2.2-8.1-13.5-8.5-16 0zm160 0c-12.8 44.4-40 56.4-40 87.7 0 27.7 21.5 50.1 48 50.1s48-22.4 48-50.1c0-31.4-27.2-43.1-40-87.7-2.2-8.1-13.5-8.5-16 0z"></path>
-            </svg>
-            91%
+            {current.humidity}%
           </li>
           <li className="card__footer__weather__item pressure">
             <svg
@@ -141,7 +159,7 @@ function CardNow() {
                           "
               />
             </svg>
-            756 мм рт. ст.
+            {Math.round((current.pressure * 3) / 4)} мм рт. ст.
           </li>
         </ul>
       </div>

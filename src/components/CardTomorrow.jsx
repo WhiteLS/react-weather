@@ -1,6 +1,20 @@
 import React from 'react';
 
-function CardTomorrow() {
+function CardTomorrow({ tomorrow }) {
+  // console.log(tomorrow);
+  // console.log(
+  //   tomorrow.map((item) => {
+  //     // return new Date(item.dt * 1000).getHours() % 6 ? null : item;
+  //     // if (new Date(item.dt * 1000).getHours() % 6 == 0) {
+  //     //   if (new Date(item.dt * 1000).getDate() !== new Date().getDate()) return item;
+  //     // } else {
+  //     //   return;
+  //     // }
+  //     if (new Date(item.dt * 1000).getDate() === new Date().getDate() + 1) {
+  //       if (new Date(item.dt * 1000).getHours() % 6 == 0) return item;
+  //     }
+  //   }),
+  // );
   return (
     <div className="card card--tomorrow">
       <div className="card__text">
@@ -23,7 +37,7 @@ function CardTomorrow() {
                 <defs>
                   <radialGradient id="a" cx="82.715%" cy="14.258%" fx="82.715%" fy="14.258%">
                     <stop offset="0%" stopColor="#777AB4" />
-                    <stop offset="100%" stopColor="#777AB4" stop-opacity="0" />
+                    <stop offset="100%" stopColor="#777AB4" stopOpacity="0" />
                   </radialGradient>
                   <radialGradient
                     id="b"
@@ -33,7 +47,7 @@ function CardTomorrow() {
                     fx="8.171%"
                     fy="-6.535%">
                     <stop offset="0%" stopColor="#777AB4" />
-                    <stop offset="100%" stopColor="#777AB4" stop-opacity="0" />
+                    <stop offset="100%" stopColor="#777AB4" stopOpacity="0" />
                   </radialGradient>
                 </defs>
                 <g fill="none">
@@ -44,13 +58,13 @@ function CardTomorrow() {
                   />
                   <path
                     fill="#000"
-                    fill-opacity=".02"
+                    fillOpacity=".02"
                     d="M6 19.5c-2.209 0-4-1.791-4-4s1.791-4 4-4c.417 0 .818.064 1.196.182.563-1.842 2.277-3.182 4.304-3.182 2.485 0 4.5 2.015 4.5 4.5 0 .235-.018.465-.053.69.328-.123.682-.19 1.053-.19 1.657 0 3 1.343 3 3s-1.343 3-3 3h-11zM6 19.75c-2.209 0-4-1.791-4-4s1.791-4 4-4c.417 0 .818.064 1.196.182.563-1.842 2.277-3.182 4.304-3.182 2.485 0 4.5 2.015 4.5 4.5 0 .235-.018.465-.053.69.328-.123.682-.19 1.053-.19 1.657 0 3 1.343 3 3s-1.343 3-3 3h-11zM6 20c-2.209 0-4-1.791-4-4s1.791-4 4-4c.417 0 .818.064 1.196.182.563-1.842 2.277-3.182 4.304-3.182 2.485 0 4.5 2.015 4.5 4.5 0 .235-.018.465-.053.69.328-.123.682-.19 1.053-.19 1.657 0 3 1.343 3 3s-1.343 3-3 3h-11z"
                   />
                   <path
                     fill="#000"
-                    fill-opacity=".02"
-                    fill-rule="nonzero"
+                    fillOpacity=".02"
+                    fillRule="nonzero"
                     d="M16.25 12.5c0-2.623-2.127-4.75-4.75-4.75-2.02 0-3.792 1.272-4.465 3.127-.335-.084-.682-.127-1.035-.127-2.347 0-4.25 1.903-4.25 4.25s1.903 4.25 4.25 4.25h11c1.795 0 3.25-1.455 3.25-3.25s-1.455-3.25-3.25-3.25c-.259 0-.515.03-.762.09l.012-.34z"
                   />
                   <path
@@ -70,7 +84,7 @@ function CardTomorrow() {
                 <defs>
                   <radialGradient id="a" cx="82.715%" cy="14.258%" fx="82.715%" fy="14.258%">
                     <stop offset="0%" stopColor="#777AB4" />
-                    <stop offset="100%" stopColor="#777AB4" stop-opacity="0" />
+                    <stop offset="100%" stopColor="#777AB4" stopOpacity="0" />
                   </radialGradient>
                   <radialGradient
                     id="b"
@@ -80,7 +94,7 @@ function CardTomorrow() {
                     fx="8.171%"
                     fy="-6.535%">
                     <stop offset="0%" stopColor="#777AB4" />
-                    <stop offset="100%" stopColor="#777AB4" stop-opacity="0" />
+                    <stop offset="100%" stopColor="#777AB4" stopOpacity="0" />
                   </radialGradient>
                 </defs>
                 <g fill="none">
@@ -91,13 +105,13 @@ function CardTomorrow() {
                   />
                   <path
                     fill="#000"
-                    fill-opacity=".02"
+                    fillOpacity=".02"
                     d="M6 19.5c-2.209 0-4-1.791-4-4s1.791-4 4-4c.417 0 .818.064 1.196.182.563-1.842 2.277-3.182 4.304-3.182 2.485 0 4.5 2.015 4.5 4.5 0 .235-.018.465-.053.69.328-.123.682-.19 1.053-.19 1.657 0 3 1.343 3 3s-1.343 3-3 3h-11zM6 19.75c-2.209 0-4-1.791-4-4s1.791-4 4-4c.417 0 .818.064 1.196.182.563-1.842 2.277-3.182 4.304-3.182 2.485 0 4.5 2.015 4.5 4.5 0 .235-.018.465-.053.69.328-.123.682-.19 1.053-.19 1.657 0 3 1.343 3 3s-1.343 3-3 3h-11zM6 20c-2.209 0-4-1.791-4-4s1.791-4 4-4c.417 0 .818.064 1.196.182.563-1.842 2.277-3.182 4.304-3.182 2.485 0 4.5 2.015 4.5 4.5 0 .235-.018.465-.053.69.328-.123.682-.19 1.053-.19 1.657 0 3 1.343 3 3s-1.343 3-3 3h-11z"
                   />
                   <path
                     fill="#000"
-                    fill-opacity=".02"
-                    fill-rule="nonzero"
+                    fillOpacity=".02"
+                    fillRule="nonzero"
                     d="M16.25 12.5c0-2.623-2.127-4.75-4.75-4.75-2.02 0-3.792 1.272-4.465 3.127-.335-.084-.682-.127-1.035-.127-2.347 0-4.25 1.903-4.25 4.25s1.903 4.25 4.25 4.25h11c1.795 0 3.25-1.455 3.25-3.25s-1.455-3.25-3.25-3.25c-.259 0-.515.03-.762.09l.012-.34z"
                   />
                   <path
@@ -117,7 +131,7 @@ function CardTomorrow() {
                 <defs>
                   <radialGradient id="a" cx="82.715%" cy="14.258%" fx="82.715%" fy="14.258%">
                     <stop offset="0%" stopColor="#777AB4" />
-                    <stop offset="100%" stopColor="#777AB4" stop-opacity="0" />
+                    <stop offset="100%" stopColor="#777AB4" stopOpacity="0" />
                   </radialGradient>
                   <radialGradient
                     id="b"
@@ -127,7 +141,7 @@ function CardTomorrow() {
                     fx="8.171%"
                     fy="-6.535%">
                     <stop offset="0%" stopColor="#777AB4" />
-                    <stop offset="100%" stopColor="#777AB4" stop-opacity="0" />
+                    <stop offset="100%" stopColor="#777AB4" stopOpacity="0" />
                   </radialGradient>
                 </defs>
                 <g fill="none">
@@ -138,13 +152,13 @@ function CardTomorrow() {
                   />
                   <path
                     fill="#000"
-                    fill-opacity=".02"
+                    fillOpacity=".02"
                     d="M6 19.5c-2.209 0-4-1.791-4-4s1.791-4 4-4c.417 0 .818.064 1.196.182.563-1.842 2.277-3.182 4.304-3.182 2.485 0 4.5 2.015 4.5 4.5 0 .235-.018.465-.053.69.328-.123.682-.19 1.053-.19 1.657 0 3 1.343 3 3s-1.343 3-3 3h-11zM6 19.75c-2.209 0-4-1.791-4-4s1.791-4 4-4c.417 0 .818.064 1.196.182.563-1.842 2.277-3.182 4.304-3.182 2.485 0 4.5 2.015 4.5 4.5 0 .235-.018.465-.053.69.328-.123.682-.19 1.053-.19 1.657 0 3 1.343 3 3s-1.343 3-3 3h-11zM6 20c-2.209 0-4-1.791-4-4s1.791-4 4-4c.417 0 .818.064 1.196.182.563-1.842 2.277-3.182 4.304-3.182 2.485 0 4.5 2.015 4.5 4.5 0 .235-.018.465-.053.69.328-.123.682-.19 1.053-.19 1.657 0 3 1.343 3 3s-1.343 3-3 3h-11z"
                   />
                   <path
                     fill="#000"
-                    fill-opacity=".02"
-                    fill-rule="nonzero"
+                    fillOpacity=".02"
+                    fillRule="nonzero"
                     d="M16.25 12.5c0-2.623-2.127-4.75-4.75-4.75-2.02 0-3.792 1.272-4.465 3.127-.335-.084-.682-.127-1.035-.127-2.347 0-4.25 1.903-4.25 4.25s1.903 4.25 4.25 4.25h11c1.795 0 3.25-1.455 3.25-3.25s-1.455-3.25-3.25-3.25c-.259 0-.515.03-.762.09l.012-.34z"
                   />
                   <path
@@ -164,7 +178,7 @@ function CardTomorrow() {
                 <defs>
                   <radialGradient id="a" cx="82.715%" cy="14.258%" fx="82.715%" fy="14.258%">
                     <stop offset="0%" stopColor="#777AB4" />
-                    <stop offset="100%" stopColor="#777AB4" stop-opacity="0" />
+                    <stop offset="100%" stopColor="#777AB4" stopOpacity="0" />
                   </radialGradient>
                   <radialGradient
                     id="b"
@@ -174,7 +188,7 @@ function CardTomorrow() {
                     fx="8.171%"
                     fy="-6.535%">
                     <stop offset="0%" stopColor="#777AB4" />
-                    <stop offset="100%" stopColor="#777AB4" stop-opacity="0" />
+                    <stop offset="100%" stopColor="#777AB4" stopOpacity="0" />
                   </radialGradient>
                 </defs>
                 <g fill="none">
@@ -185,13 +199,13 @@ function CardTomorrow() {
                   />
                   <path
                     fill="#000"
-                    fill-opacity=".02"
+                    fillOpacity=".02"
                     d="M6 19.5c-2.209 0-4-1.791-4-4s1.791-4 4-4c.417 0 .818.064 1.196.182.563-1.842 2.277-3.182 4.304-3.182 2.485 0 4.5 2.015 4.5 4.5 0 .235-.018.465-.053.69.328-.123.682-.19 1.053-.19 1.657 0 3 1.343 3 3s-1.343 3-3 3h-11zM6 19.75c-2.209 0-4-1.791-4-4s1.791-4 4-4c.417 0 .818.064 1.196.182.563-1.842 2.277-3.182 4.304-3.182 2.485 0 4.5 2.015 4.5 4.5 0 .235-.018.465-.053.69.328-.123.682-.19 1.053-.19 1.657 0 3 1.343 3 3s-1.343 3-3 3h-11zM6 20c-2.209 0-4-1.791-4-4s1.791-4 4-4c.417 0 .818.064 1.196.182.563-1.842 2.277-3.182 4.304-3.182 2.485 0 4.5 2.015 4.5 4.5 0 .235-.018.465-.053.69.328-.123.682-.19 1.053-.19 1.657 0 3 1.343 3 3s-1.343 3-3 3h-11z"
                   />
                   <path
                     fill="#000"
-                    fill-opacity=".02"
-                    fill-rule="nonzero"
+                    fillOpacity=".02"
+                    fillRule="nonzero"
                     d="M16.25 12.5c0-2.623-2.127-4.75-4.75-4.75-2.02 0-3.792 1.272-4.465 3.127-.335-.084-.682-.127-1.035-.127-2.347 0-4.25 1.903-4.25 4.25s1.903 4.25 4.25 4.25h11c1.795 0 3.25-1.455 3.25-3.25s-1.455-3.25-3.25-3.25c-.259 0-.515.03-.762.09l.012-.34z"
                   />
                   <path
