@@ -9,14 +9,16 @@ SwiperCore.use([Navigation]);
 function CardHourly({ hourly }) {
   const dispatch = useDispatch();
 
-  const isLoaded = useSelector(({ isLoaded }) => isLoaded);
-
   const handleClick = (e) => {
     dispatch(setSelect(hourly[e]));
   };
 
+  const isLoaded = useSelector(({ isLoaded }) => isLoaded);
+
+  isLoaded && handleClick(0);
+
   // useEffect(() => {
-  //   handleClick(0);
+  //   dispatch(setSelect(hourly[0]));
   // }, [isLoaded]);
 
   return (

@@ -53,6 +53,10 @@ main {
 
         .table__cell__cloudy {
           text-align: left;
+
+          &::first-letter {
+            text-transform: capitalize;
+          }
         }
       }
     }

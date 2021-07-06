@@ -3,13 +3,30 @@ import { useSelector } from 'react-redux';
 function CardSelect() {
   const currentHour = useSelector(({ select }) => select);
 
-  console.log(currentHour);
+  const month = [
+    'Января',
+    'Февраля',
+    'Марта',
+    'Апреля',
+    'Мая',
+    'Июня',
+    'Июля',
+    'Августа',
+    'Сентября',
+    'Октября',
+    'Ноября',
+    'Декабря',
+  ];
+
+  const date = new Date(currentHour.dt * 1000);
 
   return (
     <div>
       <section className="main__table">
         <div className="main__table__date button button--radius button--desc">
-          <p>15 июня, 13:00</p>
+          <p>
+            {date.getDate()} {month[date.getMonth()]}, {date.getHours()}:00
+          </p>
         </div>
         <div className="card card--table">
           <table>
@@ -64,7 +81,9 @@ function CardSelect() {
                     </g>
                   </svg>
                 </td>
+
                 <td className="table__cell__temp">+{Math.round(currentHour.temp)}&deg;</td>
+
                 <td className="table__cell_explanation">Ощущается как, &deg;С</td>
                 <td className="table__cell_explanation">Вероятность осадков, %</td>
                 <td className="table__cell_explanation">
@@ -76,13 +95,13 @@ function CardSelect() {
               </tr>
               <tr>
                 <td colSpan="2" className="table__cell__cloudy">
-                  Облачно с прояснениями
+                  облачно с прояснениями
                 </td>
-                <td>+23&deg;</td>
-                <td>93%</td>
-                <td>756</td>
-                <td>2,1</td>
-                <td>81%</td>
+                <td>+{Math.round(currentHour.feels_like)}&deg;</td>
+                <td>{currentHour.pop}%</td>
+                <td>{Math.round((currentHour.pressure * 3) / 4)}</td>
+                <td>{currentHour.wind_speed}</td>
+                <td>{currentHour.humidity}%</td>
               </tr>
             </tbody>
           </table>

@@ -7,13 +7,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchWeather } from '../redux/action';
 
 function CardTwoDays() {
-  const dispatch = useDispatch();
-  const current = useSelector(({ items }) => items.current);
-  const hourly = useSelector(({ items }) => items.hourly);
-
   React.useEffect(() => {
     dispatch(fetchWeather());
   }, []);
+
+  const dispatch = useDispatch();
+  const current = useSelector(({ items }) => items.current);
+  const hourly = useSelector(({ items }) => items.hourly);
 
   return (
     <div>
