@@ -7,6 +7,7 @@ const initialState = {
     daily: [],
   },
   select: {},
+  city: '',
   isLoaded: false,
 };
 
@@ -23,6 +24,12 @@ const weather = (state = initialState, action) => {
       return {
         ...state,
         select: action.payload,
+      };
+
+    case 'SET_CITY':
+      return {
+        ...state,
+        city: action.payload,
       };
 
     default:

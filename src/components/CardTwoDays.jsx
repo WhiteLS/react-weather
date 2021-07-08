@@ -8,11 +8,12 @@ import { useSelector } from 'react-redux';
 function CardTwoDays() {
   const current = useSelector(({ items }) => items.current);
   const hourly = useSelector(({ items }) => items.hourly);
+  const cityName = useSelector(({ city }) => city);
 
   return (
     <div>
       <section className="main__card">
-        <CardNow current={current} />
+        <CardNow current={current} cityName={cityName} />
         <CardTomorrow tomorrow={hourly} />
       </section>
       <CardHourly hourly={hourly} />

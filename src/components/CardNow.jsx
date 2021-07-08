@@ -1,8 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-function CardNow({ current }) {
+function CardNow({ current, cityName = 'Москва' }) {
   // console.log(current);
   const date = new Date(current.dt * 1000);
+  // const cityName = useSelector(({ city }) => city);
+  console.log(cityName);
+
   const weekday = [
     'Воскресенье',
     'Понедельник',
@@ -32,7 +36,7 @@ function CardNow({ current }) {
       <div className="card__text">
         <div className="card__text__box">
           <p>
-            Погода в <span className="city">Димитровграде</span>
+            Погода в: <span className="city">{cityName ? cityName : 'Москва'}</span>
           </p>
           <p>
             Сейчас {date.getHours()}:{(date.getMinutes() < 10 ? '0' : '') + date.getMinutes()},{' '}
