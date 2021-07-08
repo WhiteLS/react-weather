@@ -20,6 +20,16 @@ main {
     }
   }
 
+  .main__sevenDay {
+    .day {
+      margin-bottom: 15px;
+
+      hr {
+        margin-top: 20px;
+      }
+    }
+  }
+
   .main__table {
     table {
       text-align: center;

@@ -15,11 +15,9 @@ function CardHourly({ hourly }) {
 
   const isLoaded = useSelector(({ isLoaded }) => isLoaded);
 
-  isLoaded && handleClick(0);
-
-  // useEffect(() => {
-  //   dispatch(setSelect(hourly[0]));
-  // }, [isLoaded]);
+  useEffect(() => {
+    isLoaded && handleClick(0);
+  }, [isLoaded]);
 
   return (
     <div>

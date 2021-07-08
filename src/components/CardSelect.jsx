@@ -25,7 +25,8 @@ function CardSelect() {
       <section className="main__table">
         <div className="main__table__date button button--radius button--desc">
           <p>
-            {date.getDate()} {month[date.getMonth()]}, {date.getHours()}:00
+            {date.getDate()} {month[date.getMonth()]},{' '}
+            {(date.getHours() < 10 ? '0' : '') + date.getHours()}:00
           </p>
         </div>
         <div className="card card--table">

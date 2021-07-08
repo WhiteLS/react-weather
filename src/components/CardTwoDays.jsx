@@ -3,15 +3,9 @@ import CardHourly from './CardHourly';
 import CardSelect from './CardSelect';
 import CardNow from './CardNow';
 import CardTomorrow from './CardTomorrow';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchWeather } from '../redux/action';
+import { useSelector } from 'react-redux';
 
 function CardTwoDays() {
-  React.useEffect(() => {
-    dispatch(fetchWeather());
-  }, []);
-
-  const dispatch = useDispatch();
   const current = useSelector(({ items }) => items.current);
   const hourly = useSelector(({ items }) => items.hourly);
 
