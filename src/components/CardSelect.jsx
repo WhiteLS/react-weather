@@ -99,7 +99,7 @@ function CardSelect() {
                   облачно с прояснениями
                 </td>
                 <td>+{Math.round(currentHour.feels_like)}&deg;</td>
-                <td>{currentHour.pop}%</td>
+                <td>{currentHour.pop * 100}%</td>
                 <td>{Math.round((currentHour.pressure * 3) / 4)}</td>
                 <td>{currentHour.wind_speed}</td>
                 <td>{currentHour.humidity}%</td>
