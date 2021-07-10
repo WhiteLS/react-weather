@@ -10,17 +10,23 @@ function Header() {
   const [value, setValue] = useState('');
   const dispatch = useDispatch();
 
-  const fetchCities = async () => {
-    const response = await axios.get('https://myjson.dit.upm.es/api/bins/fy2');
-    const data = await response.data;
-    setCities(data);
-  };
+  // const fetchCities = async () => {
+  //   const response = await axios.get('https://myjson.dit.upm.es/api/bins/fy2');
+  //   const data = await response.data;
+  //   setCities(data);
+  // };
 
   const filtered = cities.filter((city) => {
     return city.name.toLowerCase().includes(value.toLocaleLowerCase());
   });
 
   useEffect(() => {
+    const fetchCities = async () => {
+      const response = await axios.get('https://myjson.dit.upm.es/api/bins/fy2');
+      const data = await response.data;
+      setCities(data);
+    };
+
     fetchCities();
   }, []);
 
@@ -31,6 +37,7 @@ function Header() {
   const handleSelectCity = (i) => {
     dispatch(setCity(filtered[i].name));
     dispatch(fetchWeather(filtered[i].coords.lat, filtered[i].coords.lon));
+    // setValue(filtered[i].name);
     setValue('');
   };
 
@@ -39,7 +46,7 @@ function Header() {
       <div className="wrapper">
         <nav className="nav">
           <ul className="nav__list">
-            <li className="nav__list__item">
+            <li className="nav__list__item nav__list__item--first">
               <form className="d-flex align-center pos-r" onSubmit={handleSubmit}>
                 <label htmlFor="city-select">
                   <svg
@@ -59,13 +66,13 @@ function Header() {
                 <input
                   type="text"
                   id="city-select"
-                  list="datalist"
+                  // list="datalist"
+                  value={value}
                   placeholder="Введите город..."
                   autoComplete="off"
                   onChange={(e) => setValue(e.target.value)}
-                  onSubmit={(e) => (e.target.value = '')}
                 />
-                {value && (
+                {value && filtered.length >= 1 && (
                   <ul className="suggest">
                     {filtered.slice(0, 10).map((item, i) => {
                       return (

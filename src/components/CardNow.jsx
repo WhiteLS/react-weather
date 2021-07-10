@@ -1,11 +1,8 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 function CardNow({ current, cityName = 'Москва' }) {
   // console.log(current);
   const date = new Date(current.dt * 1000);
-  // const cityName = useSelector(({ city }) => city);
-  console.log(cityName);
 
   const weekday = [
     'Воскресенье',

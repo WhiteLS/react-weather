@@ -13,6 +13,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchWeather());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

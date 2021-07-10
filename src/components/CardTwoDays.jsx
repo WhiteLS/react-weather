@@ -14,7 +14,7 @@ function CardTwoDays() {
     <div>
       <section className="main__card">
         <CardNow current={current} cityName={cityName} />
-        <CardTomorrow tomorrow={hourly} />
+        <CardTomorrow tomorrow={hourly} cityName={cityName} />
       </section>
       <CardHourly hourly={hourly} />
       <CardSelect />

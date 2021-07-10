@@ -14,17 +14,34 @@ function CardHourly({ hourly }) {
   };
 
   const isLoaded = useSelector(({ isLoaded }) => isLoaded);
+  const date = new Date();
+  const month = [
+    'Января',
+    'Февраля',
+    'Марта',
+    'Апреля',
+    'Мая',
+    'Июня',
+    'Июля',
+    'Августа',
+    'Сентября',
+    'Октября',
+    'Ноября',
+    'Декабря',
+  ];
 
   useEffect(() => {
     isLoaded && handleClick(0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoaded]);
 
   return (
     <div>
       <section className="main__hourly">
         <div className="main__hourly__buttons">
-          <button className="button button--hourly button--radius">Сегодня, 15 июня</button>
-          <button className="button button--hourly button--radius">Завтра, 16 июня</button>
+          <button className="button button--hourly button--radius">
+            {date.getDate()} {month[date.getMonth()]}
+          </button>
         </div>
         <div className="card card--hourly">
           <div className="swiper-button-prev"></div>
@@ -37,10 +54,14 @@ function CardHourly({ hourly }) {
                 prevEl: '.swiper-button-prev',
               }}>
               {hourly.map((item, index) => {
-                let date = new Date(item.dt * 1000);
+                const date = new Date(item.dt * 1000);
                 return (
                   <SwiperSlide key={item.dt} onClick={() => handleClick(index)}>
                     <li>
+                      <span className="date">
+                        {(date.getDate() < 10 ? '0' : '') + date.getDate()}.
+                        {(date.getMonth() < 10 ? '0' : '') + (date.getMonth() + 1)}
+                      </span>
                       <span className="time">
                         {(date.getHours() < 10 ? '0' : '') + date.getHours()}:00
                       </span>
