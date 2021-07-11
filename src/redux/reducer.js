@@ -6,7 +6,15 @@ const initialState = {
     hourly: [],
     daily: [],
   },
-  select: {},
+  select: {
+    temp: '',
+    feels_like: '',
+    pop: '',
+    pressure: '',
+    wind_speed: '',
+    humidity: '',
+    weather: [{ weather: '' }],
+  },
   city: '',
   isLoaded: false,
 };

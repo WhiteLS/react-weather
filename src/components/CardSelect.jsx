@@ -34,16 +34,18 @@ function CardSelect() {
             <tbody>
               <tr>
                 <td className="table__cell__svg">
-                  {currentHour.weather && (
+                  {/* {currentHour.weather && (
                     <img
                       src={'../assets/' + currentHour.weather[0].icon + '.svg'}
                       alt={currentHour.weather[0].description}
                     />
-                  )}
+                  )} */}
+                  <img
+                    src={'../assets/' + currentHour.weather[0].icon + '.svg'}
+                    alt={currentHour.weather[0].description}
+                  />
                 </td>
-
                 <td className="table__cell__temp">+{Math.round(currentHour.temp)}&deg;</td>
-
                 <td className="table__cell_explanation">Ощущается как, &deg;С</td>
                 <td className="table__cell_explanation">Вероятность осадков, %</td>
                 <td className="table__cell_explanation">

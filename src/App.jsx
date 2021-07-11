@@ -1,5 +1,5 @@
 import { Route } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchWeather } from './redux/action';
 
@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 
 function App() {
   const dispatch = useDispatch();
+  const isLoaded = useSelector(({ isLoaded }) => isLoaded);
 
   useEffect(() => {
     dispatch(fetchWeather());
@@ -20,10 +21,14 @@ function App() {
     <div className="App">
       <div className="page">
         <Header />
-        <main>
-          <Route path="/" component={CardTwoDays} exact />
-          <Route path="/seven-days" component={SevenDays} exact />
-        </main>
+        {isLoaded ? (
+          <main>
+            <Route path="/" component={CardTwoDays} exact />
+            <Route path="/seven-days" component={SevenDays} exact />
+          </main>
+        ) : (
+          'loadingggg'
+        )}
       </div>
     </div>
   );
