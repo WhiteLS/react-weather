@@ -30,15 +30,16 @@ function Header() {
     fetchCities();
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
   const handleSelectCity = (i) => {
     dispatch(setCity(filtered[i].name));
     dispatch(fetchWeather(filtered[i].coords.lat, filtered[i].coords.lon));
     // setValue(filtered[i].name);
     setValue('');
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSelectCity();
   };
 
   return (
@@ -105,7 +106,7 @@ function Header() {
                 </datalist> */}
               </form>
             </li>
-            <Link to="/">
+            <Link to="/react-weather">
               <li className="button nav__list__item">
                 <p>Погода на 2 дня</p>
               </li>

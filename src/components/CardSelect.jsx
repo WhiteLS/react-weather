@@ -36,14 +36,19 @@ function CardSelect() {
                 <td className="table__cell__svg">
                   {/* {currentHour.weather && (
                     <img
-                      src={'../assets/' + currentHour.weather[0].icon + '.svg'}
+                      src={'assets/' + currentHour.weather[0].icon + '.svg'}
                       alt={currentHour.weather[0].description}
                     />
                   )} */}
-                  <img
-                    src={'../assets/' + currentHour.weather[0].icon + '.svg'}
+                  <span class={'icon-' + currentHour.weather[0].icon}>
+                    <span class="path1"></span>
+                    <span class="path2"></span>
+                    <span class="path3"></span>
+                  </span>
+                  {/* <img
+                    src={'assets/' + currentHour.weather[0].icon + '.svg'}
                     alt={currentHour.weather[0].description}
-                  />
+                  /> */}
                 </td>
                 <td className="table__cell__temp">+{Math.round(currentHour.temp)}&deg;</td>
                 <td className="table__cell_explanation">Ощущается как, &deg;С</td>

@@ -46,13 +46,18 @@ function CardNow({ current, cityName = 'Москва' }) {
         </h3>
       </div>
       <div className="card__main">
-        {/* <object data={'../assets/' + current.weather[0].icon + '.svg'} type="image/svg+xml">
-          <img src={'../assets/' + current.weather[0].icon + '.svg'} alt={current.weather[0].description} />
+        {/* <object data={'assets/' + current.weather[0].icon + '.svg'} type="image/svg+xml">
+          <img src={'assets/' + current.weather[0].icon + '.svg'} alt={current.weather[0].description} />
         </object> */}
-        <img
-          src={'../assets/' + current.weather[0].icon + '.svg'}
+        {/* <img
+          src={'assets/' + current.weather[0].icon + '.svg'}
           alt={current.weather[0].description}
-        />
+        /> */}
+        <span class={'icon-' + current.weather[0].icon}>
+          <span class="path1"></span>
+          <span class="path2"></span>
+          <span class="path3"></span>
+        </span>
         {/* <img
           src={'http://openweathermap.org/img/wn/' + current.weather[0].icon + '@4x.png'}
           alt={current.weather[0].description}

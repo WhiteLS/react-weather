@@ -31,11 +31,13 @@
     align-items: center;
 
     object,
+    span[class^='icon-'] span[class^='path']:before,
+    span[class^='icon-']:before,
     img,
     svg {
-      width: 80px;
-      height: 80px;
-
+      font-size: 80px;
+    }
+    span[class^='icon-'] {
       margin-right: 10px;
     }
 
@@ -73,10 +75,12 @@
 
           .tod {
             font-size: 22px;
+            line-height: 1.4;
           }
 
           .temp {
             font-size: 20px;
+            line-height: 1.4;
           }
         }
       }
@@ -98,9 +102,12 @@
         height: 18px;
 
         object,
+        span[class^='icon-'] span[class^='path']:before,
+        span[class^='icon-']:before,
         img,
         svg {
           height: 100%;
+          font-size: 80px;
           margin-right: 5px;
         }
       }
@@ -113,12 +120,15 @@
       margin-bottom: 5px;
 
       object,
+      span[class^='icon-'] span[class^='path']:before,
+      span[class^='icon-']:before,
       img,
       svg {
-        width: 80px;
-        height: 80px;
-
+        font-size: 65px;
+      }
+      span[class^='icon-'] {
         margin: 5px 0;
+        height: 70px;
       }
     }
   }

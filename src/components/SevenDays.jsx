@@ -63,12 +63,17 @@ function SevenDays() {
               </div>
               <div className="cloudiness__box">
                 {/* <object
-                  data={'../assets/' + item.weather[0].icon + '.svg'}
+                  data={'assets/' + item.weather[0].icon + '.svg'}
                   type="image/svg+xml"></object> */}
-                <img
-                  src={'../assets/' + item.weather[0].icon + '.svg'}
+                {/* <img
+                  src={'assets/' + item.weather[0].icon + '.svg'}
                   alt={item.weather[0].description}
-                />
+                /> */}
+                <span class={'icon-' + item.weather[0].icon}>
+                  <span class="path1"></span>
+                  <span class="path2"></span>
+                  <span class="path3"></span>
+                </span>
                 {/* <img
                   src={'http://openweathermap.org/img/wn/' + item.weather[0].icon + '@4x.png'}
                   alt={item.weather[0].description}
@@ -101,7 +106,7 @@ function SevenDays() {
                 <tr>
                   <td>{item.humidity}%</td>
                   <td>{Math.round((item.pressure * 3) / 4)}</td>
-                  <td>{item.pop * 100}%</td>
+                  <td>{Math.round(item.pop * 100)}%</td>
                   <td>{item.wind_speed}</td>
                   <td>{item.uvi}</td>
                 </tr>

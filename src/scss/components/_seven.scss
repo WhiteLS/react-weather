@@ -33,12 +33,16 @@
       }
 
       object,
+      span[class^='icon-'] span[class^='path']:before,
+      span[class^='icon-']:before,
       img,
       svg {
         width: 110px;
         height: 110px;
         color: white;
-
+        font-size: 80px;
+      }
+      span[class^='icon-'] {
         margin-right: 10px;
       }
     }

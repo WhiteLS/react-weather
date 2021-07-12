@@ -76,14 +76,19 @@ function CardTomorrow({ tomorrow, cityName }) {
                       {(date.getHours() < 10 ? '0' : '') + date.getHours()}:00
                     </span>
                     {/* <object
-                      data={'../assets/' + item.weather[0].icon + '.svg'}
+                      data={'assets/' + item.weather[0].icon + '.svg'}
                       type="image/svg+xml">
-                      <img src={'../assets/' + item.weather[0].icon + '.svg'} alt={item.weather[0].description} />
+                      <img src={'assets/' + item.weather[0].icon + '.svg'} alt={item.weather[0].description} />
                     </object> */}
-                    <img
-                      src={'../assets/' + item.weather[0].icon + '.svg'}
+                    <span class={'icon-' + item.weather[0].icon}>
+                      <span class="path1"></span>
+                      <span class="path2"></span>
+                      <span class="path3"></span>
+                    </span>
+                    {/* <img
+                      src={'assets/' + item.weather[0].icon + '.svg'}
                       alt={item.weather[0].description}
-                    />
+                    /> */}
                     {/* <img
                       src={'http://openweathermap.org/img/wn/' + item.weather[0].icon + '@4x.png'}
                       alt={item.weather[0].description}

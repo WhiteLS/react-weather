@@ -23,7 +23,7 @@ function App() {
         <Header />
         {isLoaded ? (
           <main>
-            <Route path="/" component={CardTwoDays} exact />
+            <Route path="/react-weather" component={CardTwoDays} exact />
             <Route path="/seven-days" component={SevenDays} exact />
           </main>
         ) : (

@@ -40,11 +40,15 @@
     }
 
     object,
+    span[class^='icon-'] span[class^='path']:before,
+    span[class^='icon-']:before,
     img,
     svg {
       width: 75px;
       height: 75px;
-
+      font-size: 65px;
+    }
+    span[class^='icon-'] {
       margin: 5px 0;
     }
   }

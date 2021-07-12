@@ -28,9 +28,12 @@ main {
     }
 
     object,
+    span[class^='icon-'] span[class^='path']:before,
+    span[class^='icon-']:before,
     img,
     svg {
       color: black;
+      font-size: 80px;
     }
   }
 
@@ -54,10 +57,13 @@ main {
           height: 50px;
 
           object,
+          span[class^='icon-'] span[class^='path']:before,
+          span[class^='icon-']:before,
           svg,
           img {
             width: 75px;
             height: 75px;
+            font-size: 80px;
 
             margin-right: 10px;
           }
