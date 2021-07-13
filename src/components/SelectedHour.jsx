@@ -20,10 +20,10 @@ function SelectedHour() {
             <tbody>
               <tr>
                 <td className="table__cell__svg">
-                  <span class={'icon-' + currentHour.weather[0].icon}>
-                    <span class="path1"></span>
-                    <span class="path2"></span>
-                    <span class="path3"></span>
+                  <span className={'icon-' + currentHour.weather[0].icon}>
+                    <span className="path1"></span>
+                    <span className="path2"></span>
+                    <span className="path3"></span>
                   </span>
                 </td>
                 <td className="table__cell__temp">+{Math.round(currentHour.temp)}&deg;</td>

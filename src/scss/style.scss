@@ -31,6 +31,8 @@ body {
     'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 21px;
   color: $black;
+
+  overflow-y: scroll;
 }
 
 a {
@@ -54,4 +56,8 @@ header,
 main {
   border-radius: 15px;
   box-shadow: -5px 8px 13px 0 rgba(0, 0, 0, 0.25);
+}
+
+.react-spinner-material {
+  margin: 25% auto 0;
 }

@@ -35,10 +35,10 @@ function CardTomorrow({ tomorrow, cityName }) {
                     <span className="tod">
                       {(date.getHours() < 10 ? '0' : '') + date.getHours()}:00
                     </span>
-                    <span class={'icon-' + item.weather[0].icon}>
-                      <span class="path1"></span>
-                      <span class="path2"></span>
-                      <span class="path3"></span>
+                    <span className={'icon-' + item.weather[0].icon}>
+                      <span className="path1"></span>
+                      <span className="path2"></span>
+                      <span className="path3"></span>
                     </span>
                     <span className="temp">+{Math.round(item.temp)}&deg;</span>
                   </li>

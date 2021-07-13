@@ -38,10 +38,10 @@ function SevenDays() {
                 </ul>
               </div>
               <div className="cloudiness__box">
-                <span class={'icon-' + item.weather[0].icon}>
-                  <span class="path1"></span>
-                  <span class="path2"></span>
-                  <span class="path3"></span>
+                <span className={'icon-' + item.weather[0].icon}>
+                  <span className="path1"></span>
+                  <span className="path2"></span>
+                  <span className="path3"></span>
                 </span>
                 <div className="card__main__box">
                   <p className="card__main__box__temp">
