@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { month, weekday } from './../constants';
+import { month, weekday } from '../constants';
 
 function CardCurrent({ current, cityName }) {
   const date = new Date(current.dt * 1000);

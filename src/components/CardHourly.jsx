@@ -3,8 +3,8 @@ import SwiperCore, { Navigation } from 'swiper';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
-import { setSelect } from './../redux/action';
-import { month } from './../constants';
+import { setSelect } from '../redux/action';
+import { month } from '../constants';
 
 SwiperCore.use([Navigation]);
 

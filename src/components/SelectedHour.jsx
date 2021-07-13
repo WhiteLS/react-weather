@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-import { month } from './../constants';
+import { month } from '../constants';
 
 function SelectedHour() {
   const currentHour = useSelector(({ select }) => select);

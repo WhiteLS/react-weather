@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { month, weekday } from './../constants';
+import { month, weekday } from '../constants';
 
 function SevenDays() {
   const days = useSelector(({ items }) => items.daily);

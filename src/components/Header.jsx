@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
-import { fetchWeather, setCity } from './../redux/action';
+import { fetchWeather, setCity } from '../redux/action';
 
 function Header() {
   const [cities, setCities] = useState([]);

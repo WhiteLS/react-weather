@@ -1,4 +1,4 @@
-import { month } from './../constants';
+import { month } from '../constants';
 
 function CardTomorrow({ tomorrow, cityName }) {
   const date = new Date();
