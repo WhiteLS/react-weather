@@ -1,12 +1,10 @@
 import { Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 import { fetchWeather } from './redux/action';
-
-import CardTwoDays from './components/CardTwoDays';
-import Header from './components/Header';
-import SevenDays from './components/SevenDays';
-import { useEffect } from 'react';
+import { Header } from './components/';
+import { Home, SevenDays } from './pages/';
 
 function App() {
   const dispatch = useDispatch();
@@ -23,7 +21,7 @@ function App() {
         <Header />
         {isLoaded ? (
           <main>
-            <Route path="/react-weather" component={CardTwoDays} exact />
+            <Route path="/react-weather" component={Home} exact />
             <Route path="/seven-days" component={SevenDays} exact />
           </main>
         ) : (

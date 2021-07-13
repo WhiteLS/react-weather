@@ -1,11 +1,9 @@
 import React from 'react';
-import CardHourly from './CardHourly';
-import CardSelect from './CardSelect';
-import CardNow from './CardNow';
-import CardTomorrow from './CardTomorrow';
 import { useSelector } from 'react-redux';
 
-function CardTwoDays() {
+import { CardHourly, SelectedHour, CardCurrent, CardTomorrow } from '../components/';
+
+function Home() {
   const current = useSelector(({ items }) => items.current);
   const hourly = useSelector(({ items }) => items.hourly);
   const cityName = useSelector(({ city }) => city);
@@ -13,13 +11,13 @@ function CardTwoDays() {
   return (
     <div>
       <section className="main__card">
-        <CardNow current={current} cityName={cityName} />
+        <CardCurrent current={current} cityName={cityName} />
         <CardTomorrow tomorrow={hourly} cityName={cityName} />
       </section>
       <CardHourly hourly={hourly} />
-      <CardSelect />
+      <SelectedHour />
     </div>
   );
 }
 
-export default CardTwoDays;
+export default Home;

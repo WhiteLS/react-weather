@@ -1,32 +1,9 @@
 import React from 'react';
 
-function CardNow({ current, cityName = 'Москва' }) {
-  // console.log(current);
-  const date = new Date(current.dt * 1000);
+import { month, weekday } from './../constants';
 
-  const weekday = [
-    'Воскресенье',
-    'Понедельник',
-    'Вторник',
-    'Среда',
-    'Четверг',
-    'Пятница',
-    'Суббота',
-  ];
-  const month = [
-    'Января',
-    'Февраля',
-    'Марта',
-    'Апреля',
-    'Мая',
-    'Июня',
-    'Июля',
-    'Августа',
-    'Сентября',
-    'Октября',
-    'Ноября',
-    'Декабря',
-  ];
+function CardCurrent({ current, cityName }) {
+  const date = new Date(current.dt * 1000);
 
   return (
     <div className="card card--today">
@@ -46,22 +23,11 @@ function CardNow({ current, cityName = 'Москва' }) {
         </h3>
       </div>
       <div className="card__main">
-        {/* <object data={'assets/' + current.weather[0].icon + '.svg'} type="image/svg+xml">
-          <img src={'assets/' + current.weather[0].icon + '.svg'} alt={current.weather[0].description} />
-        </object> */}
-        {/* <img
-          src={'assets/' + current.weather[0].icon + '.svg'}
-          alt={current.weather[0].description}
-        /> */}
         <span class={'icon-' + current.weather[0].icon}>
           <span class="path1"></span>
           <span class="path2"></span>
           <span class="path3"></span>
         </span>
-        {/* <img
-          src={'http://openweathermap.org/img/wn/' + current.weather[0].icon + '@4x.png'}
-          alt={current.weather[0].description}
-        /> */}
         <div className="card__main__box">
           <p className="card__main__box__temp">
             <span className="card__main__box__temp--now">+{Math.round(current.temp)}&deg;</span>,
@@ -147,4 +113,4 @@ function CardNow({ current, cityName = 'Москва' }) {
   );
 }
 
-export default CardNow;
+export default CardCurrent;

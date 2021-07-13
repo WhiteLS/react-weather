@@ -13,7 +13,7 @@ const initialState = {
     pressure: '',
     wind_speed: '',
     humidity: '',
-    weather: [{ weather: '' }],
+    weather: [{}],
   },
   city: '',
   isLoaded: false,

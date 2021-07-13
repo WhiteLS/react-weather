@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
 
 import { fetchWeather, setCity } from './../redux/action';
 
@@ -10,37 +10,29 @@ function Header() {
   const [value, setValue] = useState('');
   const dispatch = useDispatch();
 
-  // const fetchCities = async () => {
-  //   const response = await axios.get('https://myjson.dit.upm.es/api/bins/fy2');
-  //   const data = await response.data;
-  //   setCities(data);
-  // };
-
   const filtered = cities.filter((city) => {
     return city.name.toLowerCase().includes(value.toLocaleLowerCase());
   });
 
+  const handleSelectCity = (i) => {
+    dispatch(setCity(filtered[i].name));
+    dispatch(fetchWeather(filtered[i].coords.lat, filtered[i].coords.lon));
+    setValue('');
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   useEffect(() => {
     const fetchCities = async () => {
-      const response = await axios.get('https://myjson.dit.upm.es/api/bins/fy2');
+      const response = await axios.get('https://myjson.dit.upm.es/api/bins/g14');
       const data = await response.data;
       setCities(data);
     };
 
     fetchCities();
   }, []);
-
-  const handleSelectCity = (i) => {
-    dispatch(setCity(filtered[i].name));
-    dispatch(fetchWeather(filtered[i].coords.lat, filtered[i].coords.lon));
-    // setValue(filtered[i].name);
-    setValue('');
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleSelectCity();
-  };
 
   return (
     <header className="header">
@@ -82,7 +74,6 @@ function Header() {
                           key={item.name}
                           onClick={() => handleSelectCity(i)}>
                           {item.name}
-                          {/* + ', ' + item.district + ' край или район или чё там' */}
                         </li>
                       );
                     })}

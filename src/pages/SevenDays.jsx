@@ -1,34 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { month, weekday } from './../constants';
 
 function SevenDays() {
   const days = useSelector(({ items }) => items.daily);
   const cityName = useSelector(({ city }) => city);
-  console.log(days);
-
-  const weekday = [
-    'Воскресенье',
-    'Понедельник',
-    'Вторник',
-    'Среда',
-    'Четверг',
-    'Пятница',
-    'Суббота',
-  ];
-  const month = [
-    'Января',
-    'Февраля',
-    'Марта',
-    'Апреля',
-    'Мая',
-    'Июня',
-    'Июля',
-    'Августа',
-    'Сентября',
-    'Октября',
-    'Ноября',
-    'Декабря',
-  ];
 
   return (
     <div className="main__sevenDay">
@@ -62,22 +38,11 @@ function SevenDays() {
                 </ul>
               </div>
               <div className="cloudiness__box">
-                {/* <object
-                  data={'assets/' + item.weather[0].icon + '.svg'}
-                  type="image/svg+xml"></object> */}
-                {/* <img
-                  src={'assets/' + item.weather[0].icon + '.svg'}
-                  alt={item.weather[0].description}
-                /> */}
                 <span class={'icon-' + item.weather[0].icon}>
                   <span class="path1"></span>
                   <span class="path2"></span>
                   <span class="path3"></span>
                 </span>
-                {/* <img
-                  src={'http://openweathermap.org/img/wn/' + item.weather[0].icon + '@4x.png'}
-                  alt={item.weather[0].description}
-                /> */}
                 <div className="card__main__box">
                   <p className="card__main__box__temp">
                     <span className="card__main__box__temp--now">
